@@ -1,15 +1,9 @@
 import React, { Component } from "react";
-import { Text, View } from "react-native";
+import { Text, View, StyleSheet } from "react-native";
 import propTypes from "prop-types";
 
 const BookCount = ({ title, count }) => (
-  <View
-    style={{
-      flex: 1,
-      justifyContent: "center",
-      alignItems: "center",
-    }}
-  >
+  <View style={styles.BookCount}>
     <Text>{title}</Text>
     <Text>{count}</Text>
   </View>
@@ -25,3 +19,11 @@ BookCount.defaultProps = {
 };
 
 export default BookCount;
+
+const styles = StyleSheet.create({
+  BookCount: {
+    flex: 1,
+    justifyContent: "center",
+    alignItems: "center",
+  },
+});

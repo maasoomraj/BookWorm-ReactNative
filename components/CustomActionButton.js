@@ -1,6 +1,7 @@
 import React from "react";
 import { View, TouchableOpacity, StyleSheet } from "react-native";
 import propTypes from "prop-types";
+import color from "../assets/colors";
 
 const CustomActionButton = ({ children, onPress, style, styleTouch }) => (
   <TouchableOpacity onPress={onPress} style={styleTouch}>
@@ -26,7 +27,7 @@ const styles = StyleSheet.create({
   button: {
     width: 50,
     height: 50,
-    backgroundColor: "red",
+    backgroundColor: color.closemark,
     alignItems: "center",
     justifyContent: "center",
   },
