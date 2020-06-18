@@ -15,6 +15,7 @@ import {
   createDrawerNavigator,
 } from "react-navigation";
 import { Ionicons } from "@expo/vector-icons";
+import { fromRight } from "react-navigation-transitions";
 
 import WelcomeScreen from "./screens/AppSwitchNavigator/WelcomeScreen";
 import LoadingScreen from "./screens/AppSwitchNavigator/LoadingScreen";
@@ -54,7 +55,7 @@ const AppStackNavigator = createStackNavigator(
     LoginScreen,
   },
   {
-    mode: "modal",
+    transitionConfig: () => fromRight(),
     defaultNavigationOptions: {
       headerStyle: {
         backgroundColor: color.bgMain,
@@ -81,7 +82,6 @@ const AppDrawNavigator = createDrawerNavigator(
     },
   },
   {
-    mode: "modal",
     contentComponent: DrawerComponent,
   }
 );
