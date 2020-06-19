@@ -1,5 +1,11 @@
 import React, { Component } from "react";
-import { Text, View, StyleSheet, ActivityIndicator } from "react-native";
+import {
+  Text,
+  View,
+  StyleSheet,
+  ActivityIndicator,
+  YellowBox,
+} from "react-native";
 import { Ionicons } from "@expo/vector-icons";
 import color from "../../assets/colors";
 import { MaterialIndicator } from "react-native-indicators";
@@ -8,6 +14,7 @@ import "firebase/auth";
 
 export default class LoadingScreen extends Component {
   componentDidMount = () => {
+    YellowBox.ignoreWarnings(["Setting a timer"]);
     this.checkIfLoggedIn();
   };
 
@@ -21,9 +28,9 @@ export default class LoadingScreen extends Component {
     });
   };
 
-  //   componentWillMount = () => {
-  //     this.unsubscribe;
-  //   };
+  componentWillUnmount = () => {
+    this.unsubscribe;
+  };
 
   render() {
     return (

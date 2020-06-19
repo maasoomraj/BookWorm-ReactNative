@@ -6,6 +6,7 @@ const color = {
   bgMain: "#2e424d",
   white: "#eee",
   logocolor: "#bada55",
+  flatList: "#354d58da",
 };
 
 export default color;
